@@ -4,7 +4,7 @@
 
 ### ✅ Code Deliverables
 - [x] **Clean, modular implementation** - All code organized in src/
-- [x] **Clear documentation** - README.md, RESULTS_FINAL.md, DATA.md
+- [x] **Clear documentation** - README.md, TECHNICAL_REPORT.md, DATA.md
 - [x] **Model architecture** - Transformer encoder (src/model_transformer.py)
 - [x] **Training script** - src/train_transformer.py
 - [x] **Inference script** - src/inference_transformer.py with demo
@@ -37,8 +37,8 @@
 
 ### ✅ Performance Metrics
 - [x] **Accuracy** - 95.09% (>= 95%) ✅
-- [x] **Inference speed** - 158ms for 500 items (target: <100ms on CPU)
-  - Note: 3,153 items/sec throughput, can be optimized
+- [x] **Inference speed** - 0.72ms per query vs 500 targets (target: <100ms on CPU) ✅
+  - ~700K items/sec with pre-computed target embeddings
 - [x] **Languages** - Hindi, English, Hinglish ✅
 - [x] **Typo handling** - Handles 1-3 character errors ✅
 
@@ -107,7 +107,7 @@
 
 ### Communication (10%) ✅
 - [x] Clear documentation ✅
-- [x] Technical writing (RESULTS_FINAL.md) ✅
+- [x] Technical writing (TECHNICAL_REPORT.md) ✅
 - [x] Good explanations (README.md) ✅
 - [x] Professional presentation ✅
 
@@ -119,7 +119,7 @@
 ```
 typo-tolerant-matcher/
 ├── README.md                     ✅
-├── RESULTS_FINAL.md              ✅
+├── TECHNICAL_REPORT.md              ✅
 ├── docs/
 │   └── DATA.md                   ✅
 ├── src/
@@ -207,7 +207,7 @@ I'm submitting my solution for the AI Engineer Assignment (Challenge 2C).
 Solution Summary:
 - Model: Transformer Encoder (88K parameters, 2.0MB)
 - Accuracy: 95.09% (exceeds 95% target)
-- Inference: 3,153 items/sec on CPU
+- Inference: ~700K items/sec on CPU (with embedding cache)
 - Data: 3,117 examples (Kaggle + LLM-generated)
 
 Repository: [GitHub link]
@@ -250,7 +250,7 @@ Best regards,
 - ✅ 95.09% accuracy (exceeds target)
 - ✅ 2.0MB model (90% under limit)
 - ✅ 88K parameters (99% under limit)
-- ✅ Fast inference (3,153/sec)
+- ✅ Fast inference (~700K/sec cached, <1ms/query)
 - ✅ Complete documentation
 - ✅ Clean, professional code
 
