@@ -187,7 +187,8 @@ typo-tolerant-matcher/
 │   ├── generate_more_data.py     # Data generation
 │   └── dataset.py               # Data loading
 ├── models/
-│   └── best_model_transformer.pth # Final model (95.09%)
+│   ├── transformer_final.pth      # Final Transformer model (95.09%)
+│   └── cnn_final.pth              # Final CNN baseline model (83.12%)
 ├── data/
 │   ├── raw/                 # Downloaded datasets
 │   └── processed/

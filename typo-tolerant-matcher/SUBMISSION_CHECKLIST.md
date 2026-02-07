@@ -31,7 +31,7 @@
   5. "dal makhni" → Dal Makhani (97.6%)
 
 ### ✅ Model Files
-- [x] **Trained weights** - models/best_model_transformer.pth (2.0MB)
+- [x] **Trained weights** - models/transformer_final.pth (2.0MB)
 - [x] **Model size** - 2.0 MB (< 20MB) ✅
 - [x] **Parameters** - 88,609 (< 10M) ✅
 
@@ -130,7 +130,7 @@ typo-tolerant-matcher/
 │   ├── train_transformer.py      ✅
 │   └── inference_transformer.py  ✅
 ├── models/
-│   └── best_model_transformer.pth ✅ (2.0MB)
+│   └── transformer_final.pth ✅ (2.0MB)
 ├── data/
 │   └── processed/
 │       └── training_data_llm.json ✅

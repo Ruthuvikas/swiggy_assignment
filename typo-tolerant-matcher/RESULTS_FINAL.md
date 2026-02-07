@@ -329,8 +329,8 @@ typo-tolerant-matcher/
 │   ├── train_transformer.py    # Training script
 │   └── inference_transformer.py # Inference + demo
 ├── models/
-│   ├── best_model_transformer.pth # Final model (95.09%)
-│   └── best_model_v2.pth          # CNN baseline (83.12%)
+│   ├── transformer_final.pth      # Final Transformer model (95.09%)
+│   └── cnn_final.pth              # Final CNN baseline model (83.12%)
 ├── data/
 │   ├── raw/                     # Downloaded datasets
 │   └── processed/
