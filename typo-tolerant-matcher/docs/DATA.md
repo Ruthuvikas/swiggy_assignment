@@ -2,19 +2,37 @@
 
 ## Data Sources
 
-### 1. Synthetic Training Data
+### 1. Public Datasets (Kaggle)
 
-**Source**: Programmatically generated using domain knowledge
+**Sources**:
+- Swiggy Bangalore Restaurants (restaurant and category names)
+- Indian Food 101 (dish names)
+
+**Use**:
+- Extracted dish/category names to build the base vocabulary
+- Cleaned and deduplicated to create a canonical dish list
+
+### 2. Synthetic Training Data
+
+**Source**: Programmatically generated from the base vocabulary
 
 **Generation Method**:
-- Base vocabulary: 50+ popular Indian dishes
+- Base vocabulary: 553 unique dishes (after deduplication)
 - Typo generation algorithms
-- Transliteration patterns
+- Transliteration patterns (Hindi/English/Hinglish)
 - Negative sampling
 
-### 2. Base Dish Vocabulary
+### 3. LLM-Generated Dish List (Allowed)
 
-**Curated list of popular dishes**:
+**Source**: LLM-generated list of common Indian dishes used to expand coverage
+
+**Use**:
+- Added 177 dishes to cover regional and less common items
+- Merged into the base vocabulary before synthetic generation
+
+### 4. Base Dish Vocabulary
+
+**Curated list of popular dishes (examples)**:
 - North Indian: Butter Chicken, Paneer Tikka, Dal Makhani, etc.
 - South Indian: Masala Dosa, Idli Sambar, Uttapam, etc.
 - Indo-Chinese: Chicken Manchurian, Hakka Noodles, Chilli Chicken, etc.
@@ -22,7 +40,7 @@
 - Street food: Pav Bhaji, Chole Bhature, Samosa, etc.
 - Desserts: Gulab Jamun, Rasgulla, Jalebi, etc.
 
-**Total**: 50+ unique dishes
+**Total**: 553 unique dishes (Kaggle + LLM, deduplicated)
 
 ## Data Generation Strategy
 
@@ -74,7 +92,7 @@
 - Complete non-matches: 100 examples
 - Partial matches (shared words): 50 examples
 
-**Total**: ~400 training examples
+**Total**: 3,117 training examples
 
 ### Data Format
 
@@ -140,9 +158,9 @@
 
 ## LLM-Generated Data
 
-**Not used in this implementation** to keep it fully deterministic and reproducible.
+**Used** to expand the base dish vocabulary (allowed by assignment).
 
-Alternative approach (if needed):
+**Prompt (used)**:
 ```python
 # Prompt for LLM data generation
 """
@@ -167,21 +185,27 @@ Format as JSON: [{
 
 ## Data Statistics
 
-- **Training Examples**: ~320
-- **Validation Examples**: ~80
+- **Training Examples**: 2,649
+- **Validation Examples**: 468
 - **Average Query Length**: 15-20 characters
-- **Vocabulary Coverage**: 50+ unique dishes
-- **Typo Rate**: 20-30% of training examples
-- **Transliteration Rate**: 15% of training examples
+- **Vocabulary Coverage**: 553 unique dishes
+- **Typo Rate**: ~25-30% of training examples
+- **Transliteration Rate**: ~15% of training examples
 
 ## Reproducibility
 
 **Seed**: Random seed set for reproducibility
-**Generation Script**: `src/data_generator.py`
-**Output**: `data/processed/training_data.json`
+**Generation Scripts**:
+- `src/create_real_training_data.py` (Kaggle extraction + cleaning)
+- `src/generate_llm_data.py` (LLM dish list)
+- `src/generate_more_data.py` (final synthetic pairs)
+
+**Output**: `data/processed/training_data_llm.json`
 
 To regenerate data:
 ```bash
 cd src
-python data_generator.py
+python create_real_training_data.py
+python generate_llm_data.py
+python generate_more_data.py
 ```

@@ -31,7 +31,9 @@ data/processed/*
 !data/processed/.gitkeep
 
 # Model checkpoints
-models/*.pth
+# Include trained weights for submission
+# (assignment requires weights + inference script)
+# models/*.pth
 models/*.pt
 !models/.gitkeep
 
