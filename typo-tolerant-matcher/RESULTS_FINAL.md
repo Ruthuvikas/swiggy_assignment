@@ -318,8 +318,7 @@ and batch inference of 500 items in <100ms on CPU (<20ms on GPU).
 ```
 typo-tolerant-matcher/
 ├── README.md                    # Main documentation
-├── RESULTS_FINAL.md            # This file
-├── RESULTS_CNN.md              # CNN baseline results
+├── RESULTS_FINAL.md            # Single consolidated report
 ├── docs/
 │   └── DATA.md                 # Data documentation
 ├── src/

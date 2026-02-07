@@ -177,8 +177,7 @@ All examples rank correct dish in top 3 with >95% confidence!
 ```
 typo-tolerant-matcher/
 ├── README.md               # This file
-├── RESULTS_FINAL.md        # Detailed results
-├── RESULTS_CNN.md          # CNN baseline (83%)
+├── RESULTS_FINAL.md        # Single consolidated report
 ├── docs/
 │   └── DATA.md             # Data documentation
 ├── src/
@@ -258,9 +257,8 @@ Attempt 3: Transformer + More Data (3,117 examples)
 
 ## 📚 Documentation
 
-- **[RESULTS_FINAL.md](RESULTS_FINAL.md)**: Complete results, examples, analysis
+- **[RESULTS_FINAL.md](RESULTS_FINAL.md)**: Single consolidated report (includes CNN vs Transformer observations)
 - **[docs/DATA.md](docs/DATA.md)**: Data sources, generation, preprocessing
-- **[RESULTS_CNN.md](RESULTS_CNN.md)**: CNN baseline comparison
 
 ---
 

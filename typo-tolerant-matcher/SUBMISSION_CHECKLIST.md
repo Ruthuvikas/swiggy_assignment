@@ -120,7 +120,6 @@
 typo-tolerant-matcher/
 ├── README.md                     ✅
 ├── RESULTS_FINAL.md              ✅
-├── RESULTS_CNN.md                ✅ (baseline comparison)
 ├── docs/
 │   └── DATA.md                   ✅
 ├── src/
@@ -140,7 +139,6 @@ typo-tolerant-matcher/
 ```
 
 ### Optional but Included
-- RESULTS_CNN.md (baseline comparison)
 - SUBMISSION_CHECKLIST.md (this file)
 - Training logs (training_transformer_v2.log)
 
